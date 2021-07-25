@@ -2,17 +2,29 @@ extends Sprite
 
 export(Color) var spriteColor = Color(1,1,1)
 
-func _process(delta):
+func spriteRotate(angle):
 	for sprite in get_children():
-		sprite.rotation += delta
-	self.region_enabled = true
+		sprite.rotation += angle
 
+func spriteRotateTo(angle):
+	for sprite in get_children():
+		sprite.rotation = angle
+
+func spriteLookAt(vector):
+	for sprite in get_children():
+		sprite.look_at(vector)	
+
+func _process(delta):
+	pass
+	
 func clear_sprites():
 	for sprite in get_children():
 		sprite.queue_free()
 
 func _ready():
 	self.modulate = spriteColor
+	self.region_enabled = true
+
 	render_sprites()
 
 func render_sprites():

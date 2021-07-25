@@ -11,12 +11,12 @@ public class DynamicCamera : Camera2D
 
     public override void _Ready()
     {
-        parentMaxSpeed = ((Player)this.GetParent()).maxSpeed;
+        parentMaxSpeed = ((Car)this.GetParent()).maxDriftSpeed;
     }
 
     public override void _Process(float delta)
     {
-        parentSpeed = ((Player)this.GetParent()).speed;
+        parentSpeed = ((Car)this.GetParent()).speed;
 
         currentZoom = minZoom * (parentMaxSpeed - parentSpeed) / parentMaxSpeed
                     + maxZoom * (parentSpeed) / parentMaxSpeed;
