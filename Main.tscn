@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Circuit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=2]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 56.5562, 71.3858 )
+
+[node name="Circuit" parent="." instance=ExtResource( 1 )]
+position = Vector2( 491.083, 117.725 )
+points = PoolVector2Array( -237.133, -79.0443, 36.9995, -72.3171, -277.496, 100.908, -252.269, 422.13, -168.179, 430.539, -62.2263, 373.358, -79.0443, 262.36, -200.133, 285.905, -206.861, 376.722, -121.089, 354.858, -188.361, 134.543, 188.361, -70.6353, 1.68176, 230.406, 235.451, 57.181, 35.3176, 373.358 )

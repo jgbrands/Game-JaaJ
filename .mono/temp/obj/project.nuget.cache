@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "MyZcYqbw+RCRzCybCxNu1CXxvceF/v2zMX4j16nESD2Xsfna1xCRvS2YUF5rq5SuSkLts6K/DH1JtIjWBV5Crw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Gabriel\\Documents\\Test\\Test.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.0\\microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
