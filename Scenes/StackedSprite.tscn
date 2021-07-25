@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/StackedSprite.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Graphics/Trueno.png" type="Texture" id=2]
+
+[node name="StackedSprite" type="Sprite"]
+texture = ExtResource( 2 )
+hframes = 9
+script = ExtResource( 1 )
