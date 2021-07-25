@@ -7,6 +7,8 @@ public class Player : Node2D {
     private Vector2 start;
     private Vector2 nextPoint;
     private int nextPointIndex = 1;
+    private int startIndex = 53;
+    private bool finished = false;
 
 	[Export] public int speed = 0;
     [Export] public int maxSpeed = 2000;
@@ -19,7 +21,8 @@ public class Player : Node2D {
 
 	public override void _Ready() {
         line = this.GetTree().Root.GetNode("Main").GetNode<Line2D>("Circuit");
-        start = line.Position + line.Points[0];
+        nextPointIndex = startIndex + 1;
+        start = line.Position + line.Points[startIndex];
         nextPoint = line.Position + line.Points[nextPointIndex];
         this.Position = start;
         acceleration = defaultAcceleration;
@@ -27,18 +30,19 @@ public class Player : Node2D {
 
 	public override void _Process(float delta) {
         playerMovement = new Vector2(0, 0);
+        GD.Print("Speed: " + speed + " || Acceleration: " + acceleration);
 
         //Circuit
         if ((this.Position - nextPoint).Length() < pointSnap) {
             this.Position = nextPoint;
             nextPointIndex = (nextPointIndex + 1 == line.GetPointCount()) ? 0 : ++nextPointIndex;
             nextPoint = line.Position + line.Points[nextPointIndex];
+            if (this.Position == start)  GD.Print("!Finished!");
         }
         
         //Acceleration
         if (Input.IsActionPressed("space")) speed = (speed + 1 > maxSpeed) ? speed : speed + acceleration;
         else speed = (speed - 1 < 0) ? 0 : speed - drag;
-        GD.Print("Speed: " + speed + " || Acceleration: " + acceleration);
 
         //Dash
         if (Input.IsActionPressed("shift")) acceleration = turboAcceleration;

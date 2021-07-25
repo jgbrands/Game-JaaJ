@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "1FFL5uxps5kh4dmvkoUcqVW10xWSlDvTo+sIr4JXEs69d+RuJt9Xh/XWdVqCs4V0dMUhk7w78Q/aV+vuRqJtIQ==",
+  "dgSpecHash": "5p/+pZjNnMe2FdFVHJpSl4F1hr7hc5a5aPkNk+qaTqntA19C7BxDCbSPyh+3Ot7nrAVmYle9bRYIm33pWc2KtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Pichau\\Documents\\Godot\\GameJaaj\\Test\\Test.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Gabriel\\Documents\\Game-JaaJ\\Game-JaaJ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\Gabriel\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.0\\microsoft.netframework.referenceassemblies.net472.1.0.0.nupkg.sha512"
+  ],
   "logs": []
 }

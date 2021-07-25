@@ -1,36 +1,29 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Pichau\\Documents\\Godot\\GameJaaj\\Test\\Test.csproj": {}
+    "C:\\Users\\Gabriel\\Documents\\Game-JaaJ\\Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Pichau\\Documents\\Godot\\GameJaaj\\Test\\Test.csproj": {
+    "C:\\Users\\Gabriel\\Documents\\Game-JaaJ\\Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Pichau\\Documents\\Godot\\GameJaaj\\Test\\Test.csproj",
+        "projectUniqueName": "C:\\Users\\Gabriel\\Documents\\Game-JaaJ\\Test.csproj",
         "projectName": "Test",
-        "projectPath": "C:\\Users\\Pichau\\Documents\\Godot\\GameJaaj\\Test\\Test.csproj",
-        "packagesPath": "C:\\Users\\Pichau\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Pichau\\Documents\\Godot\\GameJaaj\\Test\\.mono\\temp\\obj\\",
+        "projectPath": "C:\\Users\\Gabriel\\Documents\\Game-JaaJ\\Test.csproj",
+        "packagesPath": "C:\\Users\\Gabriel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabriel\\Documents\\Game-JaaJ\\.mono\\temp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Pichau\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Gabriel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net472": {
-            "targetAlias": "net472",
             "projectReferences": {}
           }
         },
@@ -42,8 +35,14 @@
       },
       "frameworks": {
         "net472": {
-          "targetAlias": "net472",
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
+          "dependencies": {
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.411\\RuntimeIdentifierGraph.json"
         }
       }
     }

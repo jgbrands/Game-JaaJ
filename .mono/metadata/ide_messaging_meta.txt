@@ -1,2 +1,2 @@
-﻿55670
-C:/Users/Pichau/Desktop/Engines/Godot_v3.3.2-stable_mono_win64.exe
+﻿52682
+C:/Users/Gabriel/Downloads/Godot_v3.3.2-stable_mono_win64/Godot_v3.3.2-stable_mono_win64.exe

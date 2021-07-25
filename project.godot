@@ -10,8 +10,8 @@ config_version=4
 
 [application]
 
-config/name="Test"
-config/icon="res://icon.png"
+config/name="Game-JaaJ"
+config/icon="res://Assets/Graphics/icon.png"
 
 [input]
 

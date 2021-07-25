@@ -14,3 +14,11 @@ C:\Users\Pichau\Documents\Godot\GameJaaj\Test\.mono\temp\obj\Debug\Test.Assembly
 C:\Users\Pichau\Documents\Godot\GameJaaj\Test\.mono\temp\obj\Debug\Test.csproj.CoreCompileInputs.cache
 C:\Users\Pichau\Documents\Godot\GameJaaj\Test\.mono\temp\obj\Debug\Test.dll
 C:\Users\Pichau\Documents\Godot\GameJaaj\Test\.mono\temp\obj\Debug\Test.pdb
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\bin\Debug\Test.dll
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\bin\Debug\Test.pdb
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\obj\Debug\Test.csprojAssemblyReference.cache
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\obj\Debug\Test.AssemblyInfoInputs.cache
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\obj\Debug\Test.AssemblyInfo.cs
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\obj\Debug\Test.csproj.CoreCompileInputs.cache
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\obj\Debug\Test.dll
+C:\Users\Gabriel\Documents\Game-JaaJ\.mono\temp\obj\Debug\Test.pdb
