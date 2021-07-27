@@ -12,7 +12,10 @@ public class Car : Node2D
     private int nextPointIndex = 1;
     private bool finished = false;
     private Godot.Object stackedSprite;
-    private float driftAngle;
+    private float driftAngle = 0f;
+    private float driftSpeed = 0.07f;
+    private float rotationWise;
+    private float driftSpeedMultiplier;
     private Vector2 movementDirection;
 
     public string state = "Normal";
@@ -23,7 +26,7 @@ public class Car : Node2D
     [Export] public int maxNormalSpeed = 500;
     [Export] public int maxDriftSpeed = 800;
     [Export] public int pointSnap = 5;
-    [Export] public int drag = 5;
+    [Export] public int drag = 20;
     [Export] public int driftAcceleration = 5;
     [Export] public int defaultAcceleration = 2;
     [Export] public int startIndex = 53;
@@ -35,14 +38,16 @@ public class Car : Node2D
         {
             acceleration = driftAcceleration;
             maxSpeed = maxDriftSpeed;
+
+            speed = (speed + 1 > maxSpeed) ? speed - acceleration : speed + acceleration;
         }
         else
         {
             acceleration = defaultAcceleration;
             maxSpeed = maxNormalSpeed;
-        }
 
-        speed = (speed + 1 > maxSpeed) ? speed - acceleration : speed + acceleration;
+            speed = (speed + 1 > maxSpeed) ? speed - acceleration : speed + acceleration;
+        }
     }
 
     public void Deaccelerate()
@@ -65,30 +70,54 @@ public class Car : Node2D
         this.state = "Normal";
     }
 
+    public void Recover()
+    {
+        this.Position = lastPoint;
+        this.SetStateAsNormal();
+    }
+
     private void CalculateRotation()
     {
-        driftAngle = (Mathf.Pi / 2) * (speed - maxNormalSpeed) / (maxDriftSpeed - maxNormalSpeed);
-        if (driftAngle <= 0) driftAngle = 0;
+        rotationWise = ((this.nextPoint1 - this.lastPoint).Angle() - (this.nextPoint2 - this.nextPoint1).Angle())
+                            / Mathf.Abs((this.nextPoint1 - this.lastPoint).Angle() - (this.nextPoint2 - this.nextPoint1).Angle());
+        if (rotationWise == 0) rotationWise = 1;
+
+        driftSpeedMultiplier = ((float)this.speed / (float)this.maxDriftSpeed) * (1 - (this.Position - nextPoint1).Length() / (lastPoint - nextPoint1).Length());
+
+        if (this.state == "Drifting") this.driftAngle = this.driftAngle - rotationWise * driftSpeed * driftSpeedMultiplier;
+        if (this.state != "Drifting")
+        {
+            if (this.driftAngle > 0) this.driftAngle -= this.driftSpeed;
+            if (this.driftAngle < 0) this.driftAngle += this.driftSpeed;
+        }
+        if (this.driftAngle > Mathf.Pi / 2) driftAngle = Mathf.Pi / 2;
+        if (this.driftAngle < -Mathf.Pi / 2) driftAngle = -Mathf.Pi / 2;
         movementDirection = (lastPoint - nextPoint1);
 
         if (this.state != "Derailed")
         {
+            GD.Print(this.state);
+            GD.Print(this.speed);
+            GD.Print(this.rotationWise);
+            GD.Print(this.driftSpeedMultiplier);
+            GD.Print(this.driftAngle);
             stackedSprite.Call("spriteRotateTo", (movementDirection).Angle());
             stackedSprite.Call("spriteRotate", driftAngle);
         }
         else
         {
-            stackedSprite.Call("spriteRotate", 0.1);
+            stackedSprite.Call("spriteRotate", this.driftAngle / 2);
         }
 
     }
 
     public override void _Ready()
     {
-        line = this.GetTree().Root.GetNode("Main").GetNode<Line2D>("Circuit");
+        line = this.GetParent().GetNode<Line2D>("Circuit");
         stackedSprite = (Godot.Object)this.GetNode("StackedSprite");
 
         nextPointIndex = startIndex + 1;
+        line.Points[line.GetPointCount() - 1] = line.Points[0];
         start = line.GlobalPosition + line.Points[startIndex];
 
         nextPoint1 = line.GlobalPosition + line.Points[nextPointIndex];

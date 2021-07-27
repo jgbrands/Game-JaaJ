@@ -1,0 +1,1064 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/PlayerController.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Circuit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scripts/DynamicCamera.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/CityAssets/Building-003.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/CityAssets/CityLamp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Graphics/Rubble.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/CityAssets/Building-001.tscn" type="PackedScene" id=8]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Circuit" parent="." instance=ExtResource( 3 )]
+points = PoolVector2Array( -146.622, 95.0018, 377.784, -184.802, 448.879, -205.789, 527.615, -208.775, 604.34, -179.411, 656.469, -145.846, 699.749, -95.7874, 726.89, -43.9613, 737.351, 22.0712, 726.89, 86.3914, 693.575, 142.736, 651.974, 185.28, 602, 217, 526, 231, 462.348, 224.114, 403.255, 207.754, 351.786, 180.338, 305.176, 146.286, 215.454, 71.1091, -144, -192, -187.2, -224.339, -240, -256, -293.834, -268.677, -360, -272, -418.988, -260.819, -472, -240, -515.635, -206.231, -552, -168, -570.442, -100.397, -576, -40, -556.583, 35.1193, -521.877, 91.85, -493.137, 118.343, -468.415, 134.075, -424.215, 149.808, -381.513, 160.296, -326.825, 161.794, -288.618, 156.55, -235.428, 137.072, -190.272, 117.564, -158.289, 101.012 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -423.812, 319.541 )
+startIndex = 0
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+script = ExtResource( 4 )
+
+[node name="YSort" type="YSort" parent="."]
+rotation = -0.0173453
+
+[node name="Node2D7" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -18.8057, -368.488 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D8" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -127.831, -340.821 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D9" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -67.7634, -327.473 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D10" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -125.477, -267.994 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D11" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -49.0756, -264.735 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D12" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 5.65271, -314.124 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D13" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 24.3406, -248.717 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D14" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 138.356, -119.026 )
+target = Vector2( 500, 0 )
+
+[node name="Node2D15" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 99.3045, -176.19 )
+istargeting = true
+target = Vector2( -350, 0 )
+
+[node name="Node2D16" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 133.378, -229.934 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D17" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 185.391, -205.775 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D18" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 240.121, -285.981 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D19" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 243.046, -231.366 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D20" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 304.24, -319.421 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D21" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 299.109, -267.384 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D22" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 376.112, -340.688 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D23" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 357.923, -288.433 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D24" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 84.6435, -99.8441 )
+target = Vector2( -350, 0 )
+
+[node name="Node2D25" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -35.8325, -198.705 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D26" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 55.0419, -167.292 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D27" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 137.802, -173.966 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D28" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 240.436, -173.549 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D29" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 294.662, -199.683 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D30" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 349.865, -232.342 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( -350, -60 )
+scale = Vector2( 6, 6 )
+
+[node name="Node2D2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 500, 8 )
+scale = Vector2( 6, 6 )
+
+[node name="Node2D3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -26.8057, -67.0779 )
+
+[node name="Node2D4" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -32.7517, 0.706848 )
+
+[node name="Node2D5" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 177.738, -52.8075 )
+
+[node name="Node2D6" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 186.062, 18.545 )
+
+[node name="Node2D31" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -81.7321, -234.927 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D32" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -161.489, -299.374 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D33" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -203.941, -327.945 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D34" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -217.346, -365.225 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D35" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -152.243, -397.776 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D36" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -169.08, -336.041 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D37" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 41.9425, -214.815 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D38" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 45.4426, -126.651 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D39" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 2.9328, -163.513 )
+istargeting = true
+target = Vector2( -350, -60 )
+
+[node name="Node2D40" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 189.33, -145.234 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D41" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 405.532, -257.789 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D42" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 429.502, -319.268 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D43" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 518.497, -270.173 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D45" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 570.722, -259.576 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D66" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 476.549, -317.187 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D67" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 534.871, -315.858 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D44" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 463.806, -269.691 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D46" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 624.415, -232.698 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D47" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 655.21, -263.927 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D48" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 596.648, -295.487 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D49" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 671.572, -202.807 )
+scale = Vector2( 1.00036, 1.0622 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D50" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 702.14, -227.707 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D51" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 710.212, -164.551 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D52" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 747.03, -208.188 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D53" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 750.862, -130.4 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D54" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 777.509, -168.186 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D55" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 773.442, -86.2017 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D56" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 823.648, -113.752 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D57" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 840.882, -61.4058 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D58" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 797.684, -38.4285 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D59" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 826.063, 4.10553 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D60" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 886.011, -104.843 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D61" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 862.847, -177.897 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D62" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 798.703, -236.696 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D63" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 761.285, -290.15 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D64" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 698.922, -334.695 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="Node2D65" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 620.523, -359.64 )
+istargeting = true
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite3" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -313.238, -333.738 )
+scale = Vector2( 1, 1 )
+target = Vector2( -350, 0 )
+
+[node name="StackedSprite4" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -364.198, -333.123 )
+scale = Vector2( 1, 1 )
+target = Vector2( -350, 0 )
+
+[node name="StackedSprite5" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -418.051, -338.553 )
+scale = Vector2( 1, 1 )
+target = Vector2( -350, 0 )
+
+[node name="StackedSprite6" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -466.38, -316.913 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite7" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -517.523, -305.812 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite8" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -558.49, -276.552 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite9" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -587.708, -233.602 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite10" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -612.561, -183.083 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite12" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -612.406, 67.175 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite13" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -583.25, 114.135 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite14" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 817.414, 54.5148 )
+scale = Vector2( 1, 1 )
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite15" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 800.026, 106.662 )
+scale = Vector2( 1, 1 )
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite16" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 775.173, 157.181 )
+scale = Vector2( 1, 1 )
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite17" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 838.326, 144.79 )
+scale = Vector2( 1, 1 )
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite18" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 852.718, 92.5905 )
+scale = Vector2( 1, 1 )
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite19" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 879.199, 34.6071 )
+scale = Vector2( 1, 1 )
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite20" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 881.789, -28.2864 )
+scale = Vector2( 1, 1 )
+target = Vector2( 500, 0 )
+
+[node name="StackedSprite21" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -542.083, 159.805 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite22" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -600.612, 164.784 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite23" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -634.289, 119.244 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite24" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -669.307, 64.6894 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite25" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -681.776, 6.03032 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite26" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -691.172, -57.0711 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite28" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -669.566, -179.576 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite29" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -644.635, -234.589 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite30" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -615.132, -294.019 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite31" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -564.889, -339.602 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite32" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -508.993, -365.606 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite33" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -453.304, -379.625 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite34" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -391.648, -392.042 )
+scale = Vector2( 1, 1 )
+target = Vector2( -350, 0 )
+
+[node name="StackedSprite35" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -328.703, -392.449 )
+scale = Vector2( 1, 1 )
+target = Vector2( -350, 0 )
+
+[node name="StackedSprite27" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -685.716, -112.422 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite11" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -626.875, -135.378 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite36" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -639.717, -86.1492 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite37" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -642.099, -35.2403 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite38" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -632.574, 20.3706 )
+scale = Vector2( 1, 1 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -260.857, -329.832 )
+target = Vector2( -350, 0 )
+
+[node name="StackedSprite2" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -276.478, -379.555 )
+target = Vector2( -350, 0 )
+
+[node name="StackedSprite39" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -685.483, 126.523 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite40" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -730.366, 61.7351 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite41" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -733.221, -4.3244 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite42" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -750.143, -66.6273 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite43" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -727.175, -122.237 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite44" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -730.099, -184.297 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite45" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -702.924, -251.836 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite46" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -688.058, -301.586 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite47" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -753.506, -218.708 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite48" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -770.509, -160.995 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite49" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -783.409, -109.211 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite50" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -792.276, -59.3569 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite51" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -783.179, -7.19131 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite52" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -776.151, 48.939 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite53" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -736.886, 91.6265 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite54" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -727.859, 147.792 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite55" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -664.319, 174.898 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite56" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -619.124, 221.689 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite57" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -545.274, 230.971 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite58" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -536.72, 199.114 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite59" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -494.553, 189.844 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite60" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -483.416, 246.619 )
+istargeting = true
+target = Vector2( -350, 60 )
+
+[node name="StackedSprite61" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -592.514, 269.596 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite62" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -547.883, 288.353 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite63" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -611.219, 311.23 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite64" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -655.641, 280.489 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite65" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -666.794, 232.343 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite66" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -665.461, 328.272 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite67" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -582.33, 200.84 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite68" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -723.202, 201.394 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite69" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -715.045, 249.488 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite70" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -706.888, 297.583 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite71" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -704.775, 348.569 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite72" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 929.99, -75.6292 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite73" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 901.484, -160.042 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite74" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 904.963, 157.708 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite75" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 902.902, 103.725 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite76" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 924.759, 53.1538 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite77" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 946.875, -12.3979 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite78" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 766.256, 206.252 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite79" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 726.526, 250.519 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite80" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 761.544, 305.073 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite81" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 799.767, 347.695 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite82" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 829.209, 378.176 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite83" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 867.327, 426.791 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite84" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 915.058, 439.607 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite85" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 774.413, 254.346 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite86" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 820.343, 198.199 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite87" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 828.343, 255.282 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite88" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 818.523, 303.064 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite89" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 850.961, 333.598 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite90" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 880.144, 379.06 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite91" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 936.967, 386.04 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite92" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 919.821, 337.789 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite93" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 878.447, 304.104 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite94" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 879.278, 256.165 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite95" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 874.169, 205.127 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite96" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 926.801, 280.966 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite97" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 921.744, 226.931 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite98" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 925.78, 167.06 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite99" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 925.694, -0.777094 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite100" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -781.514, 107.473 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite101" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -782.293, 152.415 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite102" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -774.136, 200.51 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite103" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -766.031, 251.601 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite104" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -754.878, 299.747 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite105" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -755.762, 350.682 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite106" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -810.506, 223.856 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite107" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 944.848, 104.452 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite108" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 963.152, 431.45 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite109" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 973.7, 341.721 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite110" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 971.744, 281.746 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite111" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 975.935, 212.886 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite112" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 979.971, 153.015 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite113" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 989.947, 96.2436 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite114" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 978.95, 39.1086 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite115" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 988.77, -8.67415 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite116" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( 977.721, -62.813 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite117" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -833.28, 154.528 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite118" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -835.133, 88.5604 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite119" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -834.405, 46.6142 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite120" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -830.266, -19.2495 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite121" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -841.159, -82.3768 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite122" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -828.187, -139.096 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite123" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -800.182, -198.552 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite124" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -787.209, -255.271 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="StackedSprite125" parent="YSort" instance=ExtResource( 8 )]
+position = Vector2( -744.743, -284.505 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D68" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -138.337, 56.6684 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D69" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -171.246, -181.9 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D70" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 310.787, 117.223 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D71" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 304.561, -106.289 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D72" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -334.069, -244.224 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D73" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -537.334, -110.789 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D74" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -474.662, 94.6167 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D75" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 495.455, -173.703 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D76" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 687.451, -45.7603 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Node2D77" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 525.93, 205.152 )
+rotation = 0.0173453
+scale = Vector2( 1, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 124.001, 181.198 )
+scale = Vector2( 1.64415, 2.0637 )
+z_index = -1
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2000, 1000 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 109.407, -7.13525 )
+rotation = 0.0271796
+scale = Vector2( 4, 4 )
+zoom = Vector2( 1.5, 1.5 )
+
+[node name="PlayerController" parent="." instance=ExtResource( 2 )]
