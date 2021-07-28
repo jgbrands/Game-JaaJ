@@ -1,0 +1,166 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Scripts/MatchController.cs" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "CountDown"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "3", "2", "1", "GO!", "
+" ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 86
+font_data = ExtResource( 2 )
+
+[node name="MatchController" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+custom_fonts/font = SubResource( 1 )
+text = "1"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Label"]
+anims/CountDown = SubResource( 2 )
+
+[node name="Loss" type="Control" parent="CanvasLayer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Loss"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -206.0
+margin_top = -200.0
+margin_right = 206.0
+margin_bottom = -162.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgain" type="Button" parent="CanvasLayer/Loss/HBoxContainer"]
+margin_right = 268.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
+text = "TryAgain"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Loss/HBoxContainer"]
+margin_left = 272.0
+margin_right = 412.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
+text = "Quit"
+
+[node name="Label" type="Label" parent="CanvasLayer/Loss"]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "
+
+You Lost :("
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Victory" type="Control" parent="CanvasLayer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Victory"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -206.0
+margin_top = -200.0
+margin_right = 206.0
+margin_bottom = -162.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TryAgain" type="Button" parent="CanvasLayer/Victory/HBoxContainer"]
+margin_right = 332.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
+text = "Next Level"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Victory/HBoxContainer"]
+margin_left = 336.0
+margin_right = 476.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
+text = "Quit"
+
+[node name="Label" type="Label" parent="CanvasLayer/Victory"]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "
+
+You Won!!!"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_finished" from="CanvasLayer/Label/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

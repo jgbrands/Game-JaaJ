@@ -96,11 +96,6 @@ public class Car : Node2D
 
         if (this.state != "Derailed")
         {
-            GD.Print(this.state);
-            GD.Print(this.speed);
-            GD.Print(this.rotationWise);
-            GD.Print(this.driftSpeedMultiplier);
-            GD.Print(this.driftAngle);
             stackedSprite.Call("spriteRotateTo", (movementDirection).Angle());
             stackedSprite.Call("spriteRotate", driftAngle);
         }

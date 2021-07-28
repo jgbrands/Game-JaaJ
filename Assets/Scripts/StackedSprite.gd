@@ -41,7 +41,7 @@ func render_sprites():
 	var currentHeight = 0
 	for i in range(0, hframes):
 		if (layeredMode):
-			for j in range(0,layerRepetition[i]):
+			for _j in range(0,layerRepetition[i]):
 				var next_sprite = Sprite.new()
 				next_sprite.texture = texture
 				next_sprite.hframes = hframes
