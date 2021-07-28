@@ -117,9 +117,9 @@ public class Car : Node2D
 
         nextPointIndex = startIndex + 1;
         line.Points[line.GetPointCount() - 1] = line.Points[0];
-        start = line.GlobalPosition + line.Points[startIndex];
+        start = line.GlobalPosition + line.Points[startIndex] * line.Scale;
 
-        nextPoint1 = line.GlobalPosition + line.Points[nextPointIndex];
+        nextPoint1 = line.GlobalPosition + line.Points[nextPointIndex] * line.Scale;
         lastPoint = start;
 
         this.Position = start;
@@ -137,8 +137,8 @@ public class Car : Node2D
             if (lastPoint == start) lapsCompleted += 1;
 
             nextPointIndex = (nextPointIndex + 1 == line.GetPointCount()) ? 0 : ++nextPointIndex;
-            nextPoint1 = line.Position + line.Points[nextPointIndex];
-            nextPoint2 = line.Position + line.Points[(nextPointIndex + 2 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + 2 : nextPointIndex + 2];
+            nextPoint1 = line.Position + line.Points[nextPointIndex] * line.Scale;
+            nextPoint2 = line.Position + line.Points[(nextPointIndex + 2 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + 2 : nextPointIndex + 2] * line.Scale;
 
         }
 
