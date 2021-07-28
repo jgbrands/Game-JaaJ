@@ -23,6 +23,10 @@ startIndex = 0
 current = true
 script = ExtResource( 4 )
 
+[node name="PlayerController" parent="Player" instance=ExtResource( 2 )]
+position = Vector2( -319.543, -423.811 )
+rotation = -1.5708
+
 [node name="YSort" type="YSort" parent="."]
 rotation = -0.0173453
 
@@ -949,7 +953,5 @@ position = Vector2( 109.407, -7.13525 )
 rotation = 0.0271796
 scale = Vector2( 4, 4 )
 zoom = Vector2( 1.5, 1.5 )
-
-[node name="PlayerController" parent="." instance=ExtResource( 2 )]
 
 [node name="MatchController" parent="." instance=ExtResource( 9 )]

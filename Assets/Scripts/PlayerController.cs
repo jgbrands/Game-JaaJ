@@ -12,7 +12,7 @@ public class PlayerController : Node2D
         recoveryBarContainer = (Control)this.GetNode("CanvasLayer/RecoveryBarContainer");
         recoveryBarContainer.Hide();
         recoveryBar = (RecoveryBar)recoveryBarContainer.GetNode("RecoveryBar");
-        parent = (Car)this.GetParent().GetNode("Player");
+        parent = (Car)this.GetParent();
     }
 
 

@@ -22,6 +22,7 @@ public class Car : Node2D
     public int acceleration;
     public int speed;
     private int maxSpeed;
+    public int lapsCompleted = 0;
 
     [Export] public int maxNormalSpeed = 500;
     [Export] public int maxDriftSpeed = 800;
@@ -130,11 +131,12 @@ public class Car : Node2D
         if ((this.Position - nextPoint1).Length() < pointSnap && this.state != "Derailed")
         {
             lastPoint = new Vector2(nextPoint1);
-            //this.Position = nextPoint;
+            if (lastPoint == start) lapsCompleted += 1;
+
             nextPointIndex = (nextPointIndex + 1 == line.GetPointCount()) ? 0 : ++nextPointIndex;
             nextPoint1 = line.Position + line.Points[nextPointIndex];
             nextPoint2 = line.Position + line.Points[(nextPointIndex + 2 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + 2 : nextPointIndex + 2];
-            if (this.Position == start) finished = true;
+
         }
 
         CalculateRotation();
