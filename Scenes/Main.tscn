@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scenes/Circuit.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Scripts/DynamicCamera.cs" type="Script" id=3]
+[ext_resource path="res://Scenes/PlayerController.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/CityAssets/Building-001.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/CityAssets/Building-002.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Graphics/concreteNormalMap.jpg" type="Texture" id=6]
@@ -21,17 +21,6 @@ position = Vector2( 3.36742, 0 )
 [node name="Circuit" parent="." instance=ExtResource( 1 )]
 position = Vector2( -33.7829, 43.3921 )
 points = PoolVector2Array( 682.355, 93.1821, 748.419, 121.347, 825.42, 170.549, 854.419, 273.347, 838, 353.799, 776.161, 428.719, 675.078, 485.801, 594.212, 500.071, 497.887, 502.45, 422, 499, 363, 473, 318, 438, 282, 399, 258, 321, 252, 240, 263, 145, 298, 76, 369, 34, 450, 12, 521, 3, 597, 4, 667, 14, 736, 46, 767, 108, 769, 167, 753, 226, 730.564, 266.382, 713.593, 295.373, 688.137, 324.364, 653.489, 351.234, 610, 371, 570.051, 376.69, 538.231, 374.569, 502.875, 369.619, 463.985, 354.77, 440, 339, 418.73, 313.051, 409, 283, 401.759, 247.29, 409, 214, 426.508, 181.529, 456, 159, 500.754, 142.638, 540.352, 135.567, 582, 137, 635.104, 149.002, 675.409, 169.508, 710.058, 204.863, 732, 246, 750, 304, 732, 357, 700, 407, 656, 428, 596, 444, 525, 450, 462.57, 438.916, 405.295, 409.924, 362.868, 368.912, 334.584, 316.586, 326.099, 271.331, 325.392, 217.591, 340.948, 168.801, 368.525, 130.617, 415.901, 98.7973, 465.399, 75.4628, 525.503, 66.2704, 589.85, 73.3415, 641.552, 76.7903, 668.882, 87.3015 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( -5.65692, 8.48528 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-rotation = -0.0997361
-current = true
-smoothing_enabled = true
-smoothing_speed = 10.0
-script = ExtResource( 3 )
-maxZoom = 0.6
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 536.89, 329.522 )
@@ -139,3 +128,7 @@ position = Vector2( 643.021, 302.163 )
 
 [node name="Node2D12" parent="YSort" instance=ExtResource( 9 )]
 position = Vector2( 408.426, 296.551 )
+
+[node name="Car" parent="." instance=ExtResource( 2 )]
+
+[node name="PlayerController" parent="Car" instance=ExtResource( 3 )]

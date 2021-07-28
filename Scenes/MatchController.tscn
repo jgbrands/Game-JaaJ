@@ -37,6 +37,8 @@ size = 32
 font_data = ExtResource( 2 )
 
 [node name="MatchController" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,7 +138,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TryAgain" type="Button" parent="CanvasLayer/Victory/HBoxContainer"]
+[node name="NextLevel" type="Button" parent="CanvasLayer/Victory/HBoxContainer"]
 margin_right = 332.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 3 )
@@ -182,3 +184,7 @@ __meta__ = {
 }
 
 [connection signal="animation_finished" from="CanvasLayer/Countdown/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="CanvasLayer/Loss/HBoxContainer/TryAgain" to="." method="_on_TryAgain_pressed"]
+[connection signal="pressed" from="CanvasLayer/Loss/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Victory/HBoxContainer/NextLevel" to="." method="_on_NextLevel_pressed"]
+[connection signal="pressed" from="CanvasLayer/Victory/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]

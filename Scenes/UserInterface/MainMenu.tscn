@@ -1,7 +1,82 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Scripts/MainMenu.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Graphics/MainMenu/MainMenuCar.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Graphics/MainMenu/MainMenuBg.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphics/MainMenu/MainMenuStreet.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Graphics/MainMenu/MainMenuStrips.png" type="Texture" id=6]
+[ext_resource path="res://Scenes/Particles/Flames.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Default"
+length = 1.1
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect3:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1024, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Default"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, 0 ), Vector2( -1024, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Run"
+length = 0.4
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 2,
+"values": [ Vector2( 0, 0 ), Vector2( -1024, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Shake"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.101, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, -10 ), Vector2( -5, 0 ), Vector2( 0, 0 ), Vector2( -10, -10 ), Vector2( -5, 0 ) ]
+}
 
 [sub_resource type="Theme" id=1]
 
@@ -16,7 +91,99 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="BackGround" type="Control" parent="."]
+margin_left = 4.48987
+margin_right = 44.4899
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="BackGround"]
+
+[node name="TextureRect3" type="TextureRect" parent="BackGround/CanvasLayer"]
+margin_left = -22.9791
+margin_right = 2025.02
+margin_bottom = 600.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/CanvasLayer"]
+autoplay = "Default"
+anims/Default = SubResource( 3 )
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="BackGround"]
+layer = 2
+
+[node name="TextureRect2" type="TextureRect" parent="BackGround/CanvasLayer2"]
+margin_left = -1024.0
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/CanvasLayer2/TextureRect2"]
+autoplay = "Default"
+anims/Default = SubResource( 6 )
+
+[node name="CanvasLayer3" type="CanvasLayer" parent="BackGround"]
+layer = 3
+
+[node name="TextureRect4" type="TextureRect" parent="BackGround/CanvasLayer3"]
+margin_right = 2048.0
+margin_bottom = 600.0
+texture = ExtResource( 6 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/CanvasLayer3/TextureRect4"]
+autoplay = "Run"
+anims/Run = SubResource( 4 )
+
+[node name="Node2D" parent="BackGround/CanvasLayer3" instance=ExtResource( 7 )]
+position = Vector2( 420.238, 0.291565 )
+rotation = 1.41023
+scale = Vector2( 10, 10 )
+
+[node name="Node2D2" parent="BackGround/CanvasLayer3" instance=ExtResource( 7 )]
+position = Vector2( 256.902, 370.419 )
+rotation = 1.27758
+scale = Vector2( 10, 10 )
+
+[node name="Node2D3" parent="BackGround/CanvasLayer3" instance=ExtResource( 7 )]
+position = Vector2( 16.6953, 262.663 )
+rotation = 1.27758
+scale = Vector2( 10, 10 )
+
+[node name="CanvasLayer4" type="CanvasLayer" parent="BackGround"]
+layer = 4
+
+[node name="TextureRect" type="TextureRect" parent="BackGround/CanvasLayer4"]
+margin_left = -5.0
+margin_right = 1025.0
+margin_bottom = 610.0
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/CanvasLayer4/TextureRect"]
+autoplay = "Shake"
+anims/Shake = SubResource( 5 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -90.0
@@ -25,7 +192,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StartButton" type="Button" parent="VBoxContainer"]
+[node name="StartButton" type="Button" parent="CanvasLayer/VBoxContainer"]
 margin_right = 160.0
 margin_bottom = 22.0
 theme = SubResource( 1 )
@@ -33,7 +200,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Start"
 align = 0
 
-[node name="Options" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="CanvasLayer/VBoxContainer"]
 margin_top = 26.0
 margin_right = 160.0
 margin_bottom = 48.0
@@ -42,7 +209,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Options"
 align = 0
 
-[node name="Tutorial" type="Button" parent="VBoxContainer"]
+[node name="Tutorial" type="Button" parent="CanvasLayer/VBoxContainer"]
 margin_top = 52.0
 margin_right = 160.0
 margin_bottom = 74.0
@@ -51,6 +218,6 @@ custom_fonts/font = SubResource( 2 )
 text = "Tutorial"
 align = 0
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_Options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Tutorial" to="." method="_on_Tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="." method="_on_Options_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Tutorial" to="." method="_on_Tutorial_pressed"]

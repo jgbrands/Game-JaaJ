@@ -26,8 +26,13 @@ tracks/0/keys = {
 "values": [ Vector2( 60, 525 ), Vector2( 60, 540 ), Vector2( 60, 525 ) ]
 }
 
-[node name="PlayerController" type="Node2D"]
+[node name="PlayerController" type="Control"]
+margin_right = 1024.0
+margin_bottom = 600.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -39,10 +44,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="CanvasLayer/RecoveryBarContainer"]
-margin_left = 60.0
-margin_top = 530.726
-margin_right = 780.0
-margin_bottom = 546.726
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -360.0
+margin_top = -50.0
+margin_right = 360.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -58,10 +66,14 @@ __meta__ = {
 anims/TextUpAndDown = SubResource( 2 )
 
 [node name="RecoveryBar" type="TextureProgress" parent="CanvasLayer/RecoveryBarContainer"]
-margin_left = 970.0
-margin_top = 100.0
-margin_right = 1690.0
-margin_bottom = 116.0
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -52.6165
+margin_top = -182.619
+margin_right = -36.6165
+margin_bottom = -166.619
 rect_scale = Vector2( 2, 24 )
 texture_under = ExtResource( 4 )
 texture_progress = ExtResource( 5 )

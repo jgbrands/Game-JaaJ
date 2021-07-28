@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class PlayerController : Node2D
+public class PlayerController : Control
 {
     private Car parent;
     public bool active = false;
