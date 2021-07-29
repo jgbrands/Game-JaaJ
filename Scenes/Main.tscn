@@ -133,7 +133,6 @@ position = Vector2( 643.021, 302.163 )
 position = Vector2( 408.426, 296.551 )
 
 [node name="Car" parent="." instance=ExtResource( 2 )]
-<<<<<<< HEAD
 position = Vector2( 485.113, 255.837 )
 
 [node name="PlayerController" parent="Car" instance=ExtResource( 3 )]
@@ -143,7 +142,3 @@ position = Vector2( 127.137, 252.152 )
 position = Vector2( 231.902, 293.977 )
 
 [node name="PlayerController" parent="Car2" instance=ExtResource( 3 )]
-=======
-
-[node name="PlayerController" parent="Car" instance=ExtResource( 3 )]
->>>>>>> 075690b8aae13b2bc7b7d7ca53d041716397817a
