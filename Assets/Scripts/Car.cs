@@ -17,6 +17,7 @@ public class Car : Node2D
     private float rotationWise;
     private float driftSpeedMultiplier;
     private Vector2 movementDirection;
+    private Node2D particleNode;
 
     public string state = "Normal";
     public int acceleration;
@@ -30,7 +31,7 @@ public class Car : Node2D
     [Export] public int drag = 20;
     [Export] public int driftAcceleration = 5;
     [Export] public int defaultAcceleration = 2;
-    [Export] public int startIndex = 53;
+    [Export] public int startIndex = 0;
 
 
     public void Accelerate()
@@ -99,6 +100,7 @@ public class Car : Node2D
         {
             stackedSprite.Call("spriteRotateTo", (movementDirection).Angle());
             stackedSprite.Call("spriteRotate", driftAngle);
+            particleNode.Rotation = movementDirection.Angle() + driftAngle;
         }
         else
         {
@@ -111,12 +113,13 @@ public class Car : Node2D
     {
         line = this.GetParent().GetNode<Line2D>("Circuit");
         stackedSprite = (Godot.Object)this.GetNode("StackedSprite");
+        particleNode = (Node2D)this.GetNode("ParticleNode");
 
         nextPointIndex = startIndex + 1;
         line.Points[line.GetPointCount() - 1] = line.Points[0];
-        start = line.GlobalPosition + line.Points[startIndex];
+        start = line.GlobalPosition + line.Points[startIndex] * line.Scale;
 
-        nextPoint1 = line.GlobalPosition + line.Points[nextPointIndex];
+        nextPoint1 = line.GlobalPosition + line.Points[nextPointIndex] * line.Scale;
         lastPoint = start;
 
         this.Position = start;
@@ -134,10 +137,17 @@ public class Car : Node2D
             if (lastPoint == start) lapsCompleted += 1;
 
             nextPointIndex = (nextPointIndex + 1 == line.GetPointCount()) ? 0 : ++nextPointIndex;
-            nextPoint1 = line.Position + line.Points[nextPointIndex];
-            nextPoint2 = line.Position + line.Points[(nextPointIndex + 2 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + 2 : nextPointIndex + 2];
+            nextPoint1 = line.Position + line.Points[nextPointIndex] * line.Scale;
+            nextPoint2 = line.Position + line.Points[(nextPointIndex + 2 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + 2 : nextPointIndex + 2] * line.Scale;
 
         }
+
+        foreach (CPUParticles2D emitter in particleNode.GetChildren())
+        {
+            if (this.speed >= this.maxDriftSpeed * 0.9) emitter.Emitting = true;
+            else emitter.Emitting = false;
+        }
+
 
         CalculateRotation();
 

@@ -13,9 +13,26 @@ public class MatchController : Control
     public Label lapCounter;
     public bool matchEnded = false;
 
+    [Export] public PackedScene nextLevel;
+
     [Export] public int laps = 3;
 
     private Godot.Collections.Array neighbors;
+
+    public void _on_Quit_pressed()
+    {
+        this.GetTree().ChangeScene("res://Scenes/UserInterface/MainMenu.tscn");
+    }
+
+    public void _on_NextLevel_pressed()
+    {
+        this.GetTree().ChangeSceneTo(nextLevel);
+    }
+
+    public void _on_TryAgain_pressed()
+    {
+        this.GetTree().ReloadCurrentScene();
+    }
 
     public void _on_AnimationPlayer_animation_finished(string animationName)
     {

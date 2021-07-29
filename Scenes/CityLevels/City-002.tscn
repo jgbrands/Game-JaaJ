@@ -1,0 +1,328 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scenes/CityAssets/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/PlayerController.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/DynamicCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/MatchController.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Circuit.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/CityAssets/Tower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/CityAssets/Building-006.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Tools/DrawLineTool.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/CityAssets/Building-002.tscn" type="PackedScene" id=10]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -66.3597, -333.907, 0, 0, 0, 0, -65.0596, 323.178 )
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Circuit" parent="." instance=ExtResource( 6 )]
+z_index = -1
+points = PoolVector2Array( -16, -312, -15.9894, -297.471, -15.4949, 376.725, -24, 440, -32, 480, -48, 536, -72, 592, -88, 616, -112, 648, -144, 672, -192, 696, -240, 704, -280, 704, -320, 704, -352, 696, -384, 688, -408, 680, -424, 672, -448, 648, -464, 624, -472, 592, -472, 552, -464, 520, -448, 472, -424, 424, -376, 384, -320, 360, -240, 344, -145.16, 336.65, 144, 336, 240, 344, 320, 352, 352, 360, 392, 376, 440, 400, 472, 424, 488, 472, 496, 520, 496, 552, 480, 592, 448, 648, 408, 680, 360, 696, 304, 704, 248, 704, 200, 688, 160, 672, 120, 648, 88, 616, 64, 576, 48, 536, 32, 496, 16, 440, 15.1196, 375.144, 15.1197, -311.738, 15.1198, -411.047, 24, -536, 40, -608, 56, -656, 72, -696, 96, -744, 128, -784, 176, -824, 248, -864, 320, -888, 392, -904, 472, -904, 552, -896, 616, -872, 672, -848, 720, -816, 752, -760, 776, -696, 776, -624, 768, -552, 752, -496, 728, -464, 696, -416, 624, -368, 530, -357, 56, -360, -40, -360, -528, -368, -592, -392, -632, -416, -680, -448, -720, -504, -736, -568, -728, -632, -704, -720, -664, -800, -600, -840, -536, -864, -472, -880, -392, -888, -312, -888, -248, -872, -176, -840, -112, -808, -72, -736, -48, -656, -26.179, -534.381, -13.9512, -409.908, -16, -320 )
+
+[node name="Car" parent="." instance=ExtResource( 2 )]
+
+[node name="PlayerController" parent="Car" instance=ExtResource( 3 )]
+margin_left = -24.0
+margin_top = -7.99991
+margin_right = 1000.0
+margin_bottom = 592.0
+
+[node name="Camera" parent="Car" instance=ExtResource( 4 )]
+
+[node name="MatchController" parent="." instance=ExtResource( 5 )]
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 51.0128, -174.287 )
+z_index = -2
+
+[node name="Node2D2" parent="." instance=ExtResource( 8 )]
+position = Vector2( -390.135, -603.022 )
+scale = Vector2( 6, 6 )
+
+[node name="Node2D3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 403.968, -600.026 )
+scale = Vector2( 6, 6 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Path" parent="YSort" instance=ExtResource( 9 )]
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path2" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -70, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path3" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -140, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path4" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -210, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path5" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -280, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path6" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -350, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path7" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -420, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path8" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -490, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path9" parent="YSort" instance=ExtResource( 9 )]
+position = Vector2( -560, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="YSort2" type="YSort" parent="."]
+position = Vector2( 693.622, 3.56757 )
+
+[node name="Path" parent="YSort2" instance=ExtResource( 9 )]
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path2" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -70, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path3" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -140, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path4" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -210, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path5" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -280, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path6" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -350, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path7" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -420, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path8" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -490, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path9" parent="YSort2" instance=ExtResource( 9 )]
+position = Vector2( -560, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="YSort3" type="YSort" parent="."]
+position = Vector2( 1321.06, -371.178 )
+
+[node name="Path" parent="YSort3" instance=ExtResource( 9 )]
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path2" parent="YSort3" instance=ExtResource( 9 )]
+position = Vector2( -70, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path3" parent="YSort3" instance=ExtResource( 9 )]
+position = Vector2( -140, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path4" parent="YSort3" instance=ExtResource( 9 )]
+position = Vector2( -210, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path5" parent="YSort3" instance=ExtResource( 9 )]
+position = Vector2( -280, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path6" parent="YSort3" instance=ExtResource( 9 )]
+position = Vector2( -350, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path7" parent="YSort3" instance=ExtResource( 9 )]
+position = Vector2( -420, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="YSort5" type="YSort" parent="."]
+position = Vector2( -760, -368 )
+
+[node name="Path" parent="YSort5" instance=ExtResource( 9 )]
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path2" parent="YSort5" instance=ExtResource( 9 )]
+position = Vector2( -70, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path3" parent="YSort5" instance=ExtResource( 9 )]
+position = Vector2( -140, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path4" parent="YSort5" instance=ExtResource( 9 )]
+position = Vector2( -210, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path5" parent="YSort5" instance=ExtResource( 9 )]
+position = Vector2( -280, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path6" parent="YSort5" instance=ExtResource( 9 )]
+position = Vector2( -350, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Path7" parent="YSort5" instance=ExtResource( 9 )]
+position = Vector2( -420, 0 )
+curve = SubResource( 1 )
+object = ExtResource( 10 )
+numberOfObjects = 11.0
+
+[node name="Node2D" parent="YSort5" instance=ExtResource( 7 )]
+position = Vector2( 40, 16 )
+rotation = 0.785398
+
+[node name="Node2D2" parent="YSort5" instance=ExtResource( 7 )]
+position = Vector2( 16, 80 )
+rotation = 0.785398
+
+[node name="Node2D3" parent="YSort5" instance=ExtResource( 7 )]
+position = Vector2( 72, 80 )
+rotation = 0.785398
+
+[node name="Node2D4" parent="YSort5" instance=ExtResource( 7 )]
+position = Vector2( 16, 152 )
+rotation = 0.785398
+
+[node name="Node2D5" parent="YSort5" instance=ExtResource( 7 )]
+position = Vector2( 72, 152 )
+rotation = 0.785398
+
+[node name="Node2D6" parent="YSort5" instance=ExtResource( 7 )]
+position = Vector2( 16, 216 )
+rotation = 0.785398
+
+[node name="Node2D7" parent="YSort5" instance=ExtResource( 7 )]
+position = Vector2( 80, 216 )
+rotation = 0.785398
+
+[node name="YSort4" type="YSort" parent="."]
+
+[node name="Node2D4" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 736, -360 )
+rotation = 0.785398
+
+[node name="Node2D5" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 696, -288 )
+rotation = 0.785398
+
+[node name="Node2D6" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 760, -288 )
+rotation = 0.785398
+
+[node name="Node2D7" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 696, -216 )
+rotation = 0.785398
+
+[node name="Node2D8" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 760, -216 )
+rotation = 0.785398
+
+[node name="Node2D9" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 696, -152 )
+rotation = 0.785398
+
+[node name="Node2D10" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 760, -152 )
+rotation = 0.785398
+
+[node name="Node2D11" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( -336, 464 )
+rotation = -0.785398
+
+[node name="Node2D12" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( -160, 456 )
+rotation = -0.785398
+
+[node name="Node2D13" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( -264, 592 )
+rotation = -0.785398
+
+[node name="Node2D14" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 136, 432 )
+rotation = -0.785398
+
+[node name="Node2D15" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 336, 440 )
+rotation = -0.785398
+
+[node name="Node2D16" parent="YSort4" instance=ExtResource( 7 )]
+position = Vector2( 264, 592 )
+rotation = -0.785398

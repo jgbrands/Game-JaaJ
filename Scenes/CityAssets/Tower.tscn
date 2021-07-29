@@ -4,10 +4,10 @@
 [ext_resource path="res://Assets/Graphics/Tower.png" type="Texture" id=2]
 
 [node name="Node2D" type="Node2D"]
+rotation = -0.785398
 
 [node name="StackedSprite" parent="." instance=ExtResource( 1 )]
 texture = ExtResource( 2 )
 layersize = 5
-initialRotation = 0.83
 layeredMode = true
 layerRepetition = [ 5, 2, 5, 2, 5, 2.0, 5, 2, 5 ]
