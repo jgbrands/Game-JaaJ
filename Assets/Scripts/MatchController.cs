@@ -36,7 +36,12 @@ public class MatchController : Control
 
     public void _on_AnimationPlayer_animation_finished(string animationName)
     {
-        foreach (Node player in players) foreach (Node node in player.GetChildren()) if (node is PlayerController) ((PlayerController)node).active = true;
+        foreach (Node player in players) {
+            foreach (Node node in player.GetChildren()) {
+                if (node is PlayerController) ((PlayerController)node).active = true;
+                else if (node is AIController) ((AIController)node).active = true;
+            }
+        }
     }
 
     public override void _Ready()

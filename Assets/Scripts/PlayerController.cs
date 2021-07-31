@@ -7,6 +7,8 @@ public class PlayerController : Control
     public bool active = false;
     private Control recoveryBarContainer;
     private RecoveryBar recoveryBar;
+    [Export] public int maxNormalSpeed = 500;
+    [Export] public int maxDriftSpeed = 800;
 
 
     private DriftRecovery driftRecovery;
@@ -18,6 +20,9 @@ public class PlayerController : Control
 
         driftRecovery = (DriftRecovery)this.GetNode("CanvasLayer/DriftRecovery");
         parent = (Car)this.GetParent();
+        
+        parent.maxNormalSpeed = maxNormalSpeed;
+        parent.maxDriftSpeed = maxDriftSpeed;
     }
 
 

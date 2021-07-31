@@ -25,8 +25,8 @@ public class Car : Node2D
     private int maxSpeed;
     public int lapsCompleted = 0;
 
-    [Export] public int maxNormalSpeed = 500;
-    [Export] public int maxDriftSpeed = 800;
+    public int maxNormalSpeed = 500;
+    public int maxDriftSpeed = 800;
     [Export] public int pointSnap = 5;
     [Export] public int drag = 20;
     [Export] public int driftAcceleration = 5;
