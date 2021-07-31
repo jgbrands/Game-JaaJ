@@ -14,7 +14,7 @@ public class Car : Node2D
     private Godot.Object stackedSprite;
     private float driftAngle = 0f;
     private float driftSpeed = 0.07f;
-    private float rotationWise;
+    private float targetAngle;
     private float driftSpeedMultiplier;
     private Vector2 movementDirection;
     private Node2D particleNode;
@@ -80,21 +80,21 @@ public class Car : Node2D
 
     private void CalculateRotation()
     {
-        rotationWise = ((this.nextPoint1 - this.lastPoint).Angle() - (this.nextPoint2 - this.nextPoint1).Angle())
-                            / Mathf.Abs((this.nextPoint1 - this.lastPoint).Angle() - (this.nextPoint2 - this.nextPoint1).Angle());
-        if (rotationWise == 0) rotationWise = 1;
+        targetAngle = ((this.nextPoint1 - this.lastPoint).Angle() - (this.nextPoint2 - this.nextPoint1).Angle());
+        if (targetAngle > Mathf.Pi) targetAngle -= Mathf.Pi;
+        if (targetAngle < -Mathf.Pi) targetAngle += Mathf.Pi;
 
-        driftSpeedMultiplier = ((float)this.speed / (float)this.maxDriftSpeed) * (1 - (this.Position - nextPoint1).Length() / (lastPoint - nextPoint1).Length());
-
-        if (this.state == "Drifting") this.driftAngle = this.driftAngle - rotationWise * driftSpeed * driftSpeedMultiplier;
+        if (this.state == "Drifting") this.driftAngle = -3.5f * this.targetAngle * (float)this.speed / (float)this.maxDriftSpeed;
         if (this.state != "Drifting")
         {
             if (this.driftAngle > 0) this.driftAngle -= this.driftSpeed;
             if (this.driftAngle < 0) this.driftAngle += this.driftSpeed;
         }
-        if (this.driftAngle > Mathf.Pi / 2) driftAngle = Mathf.Pi / 2;
-        if (this.driftAngle < -Mathf.Pi / 2) driftAngle = -Mathf.Pi / 2;
-        movementDirection = (lastPoint - nextPoint1);
+
+        GD.Print(targetAngle);
+
+        if ((lastPoint - nextPoint1).Length() != 0) movementDirection = (lastPoint - nextPoint1);
+        else movementDirection = nextPoint1 - nextPoint2;
 
         if (this.state != "Derailed")
         {
@@ -111,7 +111,7 @@ public class Car : Node2D
 
     public override void _Ready()
     {
-        line = this.GetParent().GetNode<Line2D>("Circuit");
+        line = this.GetParent().GetNode<Line2D>("CircuitBuilder/Circuit");
         stackedSprite = (Godot.Object)this.GetNode("StackedSprite");
         particleNode = (Node2D)this.GetNode("ParticleNode");
 

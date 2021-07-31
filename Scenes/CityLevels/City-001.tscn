@@ -1,9 +1,9 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerController.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Circuit.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Scripts/DynamicCamera.cs" type="Script" id=4]
+[ext_resource path="res://Scenes/Tools/CircuitBuilder.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/DynamicCamera.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/CityAssets/Building-003.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/CityAssets/CityLamp.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Graphics/Rubble.png" type="Texture" id=7]
@@ -27,11 +27,12 @@ _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -158.943, 243.19, 0.400469, 51.0448, -0.400469, -51.0448, -106.313, 92.8947, 0, 0, 0, 0, -58.1393, -52.867, 14.592, 101.022, -14.592, -101.022, -58.6362, -109.801, 0, 0, 0, 0, -112.186, -236.694, 0, 0, 0, 0, -228.755, -373.526, 0, 0, 0, 0, -162.962, -389.084, -35.9662, -59.5917, 35.9662, 59.5917, -69.1293, -282.021, -10.6787, -82.7601, 10.6787, 82.7601, 52.545, -76.9696, 1.7818, -13.7471, -1.7818, 13.7471, -18.2696, 51.6706, 33.371, -48.0542, -33.371, 48.0542, -56.2173, 167.376, 0, 0, 0, 0, -108.965, 304.187 )
 }
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="Curve2D" id=4]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 63.6838, -6.79602, -280.962, 151.191, 280.962, -151.191, 368.957, -174.602, 1.25992, -52.9167, -1.25992, 52.9167, 715.01, 9.53613, 206.627, 28.9782, -206.627, -28.9782, 459.439, 260.345, 166.231, -7.9155, -166.231, 7.9155, -337.436, -273.021, 0, -87.3071, 0, 87.3071, -570.784, -74.5961, -163.502, 3.1748, 163.502, -3.1748, -380.296, 182.563, 0, 0, 0, 0, 63.6838, -6.79602 )
+}
 
-[node name="Circuit" parent="." instance=ExtResource( 3 )]
-z_index = -1
-points = PoolVector2Array( -146.622, 95.0018, 377.784, -184.802, 448.879, -205.789, 527.615, -208.775, 604.34, -179.411, 656.469, -145.846, 699.749, -95.7874, 726.89, -43.9613, 737.351, 22.0712, 726.89, 86.3914, 693.575, 142.736, 651.974, 185.28, 602, 217, 526, 231, 462.348, 224.114, 403.255, 207.754, 351.786, 180.338, 305.176, 146.286, 215.454, 71.1091, -144, -192, -187.2, -224.339, -240, -256, -293.834, -268.677, -360, -272, -418.988, -260.819, -472, -240, -515.635, -206.231, -552, -168, -570.442, -100.397, -576, -40, -556.583, 35.1193, -521.877, 91.85, -493.137, 118.343, -468.415, 134.075, -424.215, 149.808, -381.513, 160.296, -326.825, 161.794, -288.618, 156.55, -235.428, 137.072, -190.272, 117.564, -158.289, 101.012 )
+[node name="Node2D" type="Node2D"]
 
 [node name="YSort" type="YSort" parent="."]
 rotation = -0.0173453
@@ -159,11 +160,11 @@ zoom = Vector2( 1.5, 1.5 )
 [node name="MatchController" parent="." instance=ExtResource( 9 )]
 nextLevel = ExtResource( 11 )
 
+[node name="CircuitBuilder" parent="." instance=ExtResource( 3 )]
+curve = SubResource( 4 )
+
 [node name="Car" parent="." instance=ExtResource( 1 )]
 
 [node name="PlayerController" parent="Car" instance=ExtResource( 2 )]
 
-[node name="Camera2D2" type="Camera2D" parent="Car"]
-rotation = -1.5708
-current = true
-script = ExtResource( 4 )
+[node name="Camera" parent="Car" instance=ExtResource( 4 )]

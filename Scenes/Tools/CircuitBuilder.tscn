@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/CircuitBuilder.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Circuit.tscn" type="PackedScene" id=2]
+
+[node name="CircuitBuilder" type="Path2D"]
+script = ExtResource( 1 )
+resolution = 60.0
+circuit = ExtResource( 2 )
+
+[node name="Follow" type="PathFollow2D" parent="."]
