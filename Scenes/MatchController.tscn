@@ -45,6 +45,7 @@ __meta__ = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="Countdown" type="Label" parent="CanvasLayer"]
 anchor_left = 0.5

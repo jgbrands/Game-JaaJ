@@ -7,17 +7,23 @@ public class PlayerController : Control
     public bool active = false;
     private Control recoveryBarContainer;
     private RecoveryBar recoveryBar;
+
+
+    private DriftRecovery driftRecovery;
     public override void _Ready()
     {
         recoveryBarContainer = (Control)this.GetNode("CanvasLayer/RecoveryBarContainer");
         recoveryBarContainer.Hide();
         recoveryBar = (RecoveryBar)recoveryBarContainer.GetNode("RecoveryBar");
+
+        driftRecovery = (DriftRecovery)this.GetNode("CanvasLayer/DriftRecovery");
         parent = (Car)this.GetParent();
     }
 
 
     public override void _Process(float delta)
     {
+
         if (this.active)
         {
             if (Input.IsActionPressed("accelerate") && parent.state != "Derailed") parent.Accelerate();
@@ -26,14 +32,15 @@ public class PlayerController : Control
             if (parent.state == "Normal" && !Input.IsActionPressed("accelerate")) parent.Deaccelerate();
 
 
-            /* SetStateAsDerailed nao eh pra ser decidio pelo jogador quando vai ser usado mas eu coloquei aqui
-            pra descarrilhar o carro quando aperta s por motivos de teste */
-            if (Input.IsActionJustPressed("brake"))
+
+            if (driftRecovery.lost)
             {
                 parent.SetStateAsDerailed();
                 recoveryBar.Value = 0;
                 recoveryBarContainer.Show();
                 recoveryBar.active = true;
+                driftRecovery.time = 0;
+                driftRecovery.lost = false;
             }
             if (parent.state == "Derailed")
             {
@@ -45,6 +52,13 @@ public class PlayerController : Control
                     recoveryBarContainer.Hide();
                 }
             }
+
+            if (parent.speed > parent.maxNormalSpeed * 1.2 && parent.state != "Derailed" && !driftRecovery.active)
+            {
+                driftRecovery.set();
+            }
+            if (parent.speed < parent.maxNormalSpeed && parent.state != "Derailed") driftRecovery.shut();
         }
+        else driftRecovery.shut();
     }
 }

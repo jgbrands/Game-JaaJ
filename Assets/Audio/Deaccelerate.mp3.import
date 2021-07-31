@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Deaccelerate.mp3-0f9880b8f860da7fdbf8bee4da16625e.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Deaccelerate.mp3"
+dest_files=[ "res://.import/Deaccelerate.mp3-0f9880b8f860da7fdbf8bee4da16625e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

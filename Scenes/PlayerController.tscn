@@ -5,7 +5,7 @@
 [ext_resource path="res://Assets/Scripts/RecoveryBar.cs" type="Script" id=3]
 [ext_resource path="res://Assets/Graphics/RcoverBarOutLine.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Graphics/Red.png" type="Texture" id=5]
-[ext_resource path="res://DriftRecovery.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/DriftRecovery.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
@@ -86,3 +86,5 @@ __meta__ = {
 }
 
 [node name="DriftRecovery" parent="CanvasLayer" instance=ExtResource( 6 )]
+margin_left = -833.295
+margin_right = 190.705

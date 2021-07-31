@@ -1,5 +1,6 @@
 extends Control
 
+onready var tutorial = self.get_node("CanvasLayer/Popup")
 
 func _ready():
 	pass
@@ -14,4 +15,4 @@ func _on_Options_pressed():
 
 
 func _on_Tutorial_pressed():
-	pass # Replace with function body.
+	tutorial.popup() # Replace with function body.

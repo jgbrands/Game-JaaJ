@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/PlayerController.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/MatchController.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scenes/CityAssets/Tower.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Tools/DrawLineTool.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/CityAssets/CityLamp.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/CityLevels/City-004.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -47,6 +48,7 @@ margin_left = -16.0
 margin_top = -8.0
 margin_right = 1008.0
 margin_bottom = 592.0
+nextLevel = ExtResource( 10 )
 
 [node name="Path" parent="." instance=ExtResource( 8 )]
 curve = SubResource( 1 )

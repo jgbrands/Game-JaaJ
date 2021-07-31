@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/CityAssets/Building-001.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/MatchController.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Tools/DrawLineTool.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/UserInterface/MainMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/CityLevels/City-002.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -35,7 +35,6 @@ points = PoolVector2Array( -146.622, 95.0018, 377.784, -184.802, 448.879, -205.7
 
 [node name="YSort" type="YSort" parent="."]
 rotation = -0.0173453
-scale = Vector2( 1, 1 )
 z_index = 1
 
 [node name="Node2D" parent="YSort" instance=ExtResource( 5 )]
@@ -101,7 +100,6 @@ rotation = 0.0173453
 [node name="Path" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -301.114, 108.731 )
 rotation = 0.0173453
-scale = Vector2( 1, 1 )
 curve = SubResource( 1 )
 object = ExtResource( 8 )
 numberOfObjects = 45.0
@@ -109,7 +107,6 @@ numberOfObjects = 45.0
 [node name="Path2" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( -805.157, 63.5784 )
 rotation = 0.0173453
-scale = Vector2( 1, 1 )
 curve = SubResource( 2 )
 object = ExtResource( 8 )
 numberOfObjects = 85.0
@@ -117,7 +114,6 @@ numberOfObjects = 85.0
 [node name="Path3" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 952.085, 100.702 )
 rotation = 0.0173453
-scale = Vector2( 1, 1 )
 curve = SubResource( 3 )
 object = ExtResource( 8 )
 numberOfObjects = 25.0

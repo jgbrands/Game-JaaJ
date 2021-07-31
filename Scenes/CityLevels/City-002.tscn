@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scenes/CityAssets/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scenes/CityAssets/Building-006.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Tools/DrawLineTool.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/CityAssets/Building-002.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/CityLevels/City-003.tscn" type="PackedScene" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -33,6 +34,7 @@ margin_bottom = 592.0
 [node name="Camera" parent="Car" instance=ExtResource( 4 )]
 
 [node name="MatchController" parent="." instance=ExtResource( 5 )]
+nextLevel = ExtResource( 11 )
 
 [node name="Node2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 51.0128, -174.287 )
@@ -305,24 +307,18 @@ rotation = 0.785398
 
 [node name="Node2D11" parent="YSort4" instance=ExtResource( 7 )]
 position = Vector2( -336, 464 )
-rotation = -0.785398
 
 [node name="Node2D12" parent="YSort4" instance=ExtResource( 7 )]
 position = Vector2( -160, 456 )
-rotation = -0.785398
 
 [node name="Node2D13" parent="YSort4" instance=ExtResource( 7 )]
 position = Vector2( -264, 592 )
-rotation = -0.785398
 
 [node name="Node2D14" parent="YSort4" instance=ExtResource( 7 )]
 position = Vector2( 136, 432 )
-rotation = -0.785398
 
 [node name="Node2D15" parent="YSort4" instance=ExtResource( 7 )]
 position = Vector2( 336, 440 )
-rotation = -0.785398
 
 [node name="Node2D16" parent="YSort4" instance=ExtResource( 7 )]
 position = Vector2( 264, 592 )
-rotation = -0.785398

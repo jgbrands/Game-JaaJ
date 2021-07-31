@@ -1,13 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Graphics/RcoverBarOutLine.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Graphics/icon.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Graphics/Red.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Scripts/DriftRecovery.cs" type="Script" id=4]
+[ext_resource path="res://Assets/Graphics/Green.png" type="Texture" id=5]
 
 [node name="DriftRecovery" type="Control"]
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = -829.515
+margin_top = -280.876
+margin_right = 194.485
+margin_bottom = 319.124
+rect_scale = Vector2( 2, 2 )
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -42,6 +46,23 @@ margin_right = 967.0
 margin_bottom = 409.0
 rect_scale = Vector2( 0.15, 0.15 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GaugeMeter" type="TextureProgress" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -107.805
+margin_top = -100.0
+margin_right = -91.805
+margin_bottom = -84.0
+rect_scale = Vector2( 0.2, 10 )
+value = 100.0
+texture_progress = ExtResource( 5 )
+fill_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }

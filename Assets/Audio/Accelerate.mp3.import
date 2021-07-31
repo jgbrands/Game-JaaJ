@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Accelerate.mp3-e756b5b08b6d6911b252dd2a035124ef.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Accelerate.mp3"
+dest_files=[ "res://.import/Accelerate.mp3-e756b5b08b6d6911b252dd2a035124ef.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
