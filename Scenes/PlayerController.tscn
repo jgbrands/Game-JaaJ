@@ -3,8 +3,8 @@
 [ext_resource path="res://Assets/Scripts/PlayerController.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Scripts/RecoveryBar.cs" type="Script" id=3]
-[ext_resource path="res://Assets/Graphics/RcoverBarOutLine.png" type="Texture" id=4]
-[ext_resource path="res://Assets/Graphics/Red.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Graphics/UiSprites/RecoveryBarFill.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Graphics/UiSprites/RecoveryBarContainer.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/DriftRecovery.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
@@ -76,9 +76,9 @@ margin_left = -52.6165
 margin_top = -182.619
 margin_right = -36.6165
 margin_bottom = -166.619
-rect_scale = Vector2( 2, 24 )
-texture_under = ExtResource( 4 )
-texture_progress = ExtResource( 5 )
+rect_scale = Vector2( 2, 20 )
+texture_over = ExtResource( 5 )
+texture_progress = ExtResource( 4 )
 fill_mode = 3
 script = ExtResource( 3 )
 __meta__ = {

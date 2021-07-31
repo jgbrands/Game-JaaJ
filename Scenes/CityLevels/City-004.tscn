@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tools/CircuitBuilder.tscn" type="PackedScene" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://Scenes/PlayerController.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/MatchController.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/DynamicCamera.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/UserInterface/MainMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/CityLevels/City-005.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/AIController.tscn" type="PackedScene" id=8]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -26,11 +27,24 @@ nextLevel = ExtResource( 7 )
 zoom = Vector2( 4, 4 )
 
 [node name="CircuitBuilder" parent="." instance=ExtResource( 2 )]
+z_index = -1
 curve = SubResource( 1 )
 resolution = 480.0
 
 [node name="Car2" parent="." instance=ExtResource( 1 )]
 
+[node name="PlayerController" parent="Car2" instance=ExtResource( 4 )]
+
 [node name="Camera" parent="Car2" instance=ExtResource( 6 )]
 
-[node name="PlayerController" parent="Car2" instance=ExtResource( 4 )]
+[node name="Car" parent="." instance=ExtResource( 1 )]
+startIndex = 3
+
+[node name="AIController" parent="Car" instance=ExtResource( 8 )]
+rotation = -1.5708
+driftChance = 70
+driftCooldown = 2
+exitDriftChance = 20
+deaccelerateChance = 0
+maxNormalSpeed = 500
+maxDriftSpeed = 800

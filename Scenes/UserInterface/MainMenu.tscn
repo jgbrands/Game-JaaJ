@@ -244,7 +244,7 @@ margin_top = 20.0
 margin_right = 575.0
 margin_bottom = 99.0
 custom_fonts/font = SubResource( 7 )
-text = "wefiaygbwefiyabwefhabwelfhbawlehfbaWLEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa=dgasdfasdfasefawefawefawefawefawefaw"
+text = "Aperte \"espaco\" para acelerar"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -256,7 +256,7 @@ margin_top = 382.0
 margin_right = 824.5
 margin_bottom = 461.0
 custom_fonts/font = SubResource( 7 )
-text = "wefiaygbwefiyabwefhabwelfhbawlehfbaWLEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+text = "Caso vc falhe o minigame vc vai descarrilhar, pra se recuperar aperte \"D\" repetidas vezes"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -268,7 +268,7 @@ margin_top = 262.0
 margin_right = 584.5
 margin_bottom = 341.0
 custom_fonts/font = SubResource( 7 )
-text = "wefiaygbwefiyabwefhabwelfhbawlehfbaWLEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+text = "Quando estiver fazendo drift um pequeno minigame vai aparecer na tela, aperte \"S\" algumas vezes e tente descobrir como ele funciona"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -280,7 +280,7 @@ margin_top = 142.0
 margin_right = 816.5
 margin_bottom = 221.0
 custom_fonts/font = SubResource( 7 )
-text = "wefiaygbwefiyabwefhabwelfhbawlehfbaWLEaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+text = "Aperte \"shift\" enquanto acelera pra fazer drift"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false

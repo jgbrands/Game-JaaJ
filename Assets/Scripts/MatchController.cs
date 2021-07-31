@@ -36,8 +36,10 @@ public class MatchController : Control
 
     public void _on_AnimationPlayer_animation_finished(string animationName)
     {
-        foreach (Node player in players) {
-            foreach (Node node in player.GetChildren()) {
+        foreach (Node player in players)
+        {
+            foreach (Node node in player.GetChildren())
+            {
                 if (node is PlayerController) ((PlayerController)node).active = true;
                 else if (node is AIController) ((AIController)node).active = true;
             }
@@ -75,6 +77,7 @@ public class MatchController : Control
                     this.matchEnded = true;
 
                     foreach (Node node in player.GetChildren()) if (node is PlayerController) victory.Show();
+                    foreach (Node node in player.GetChildren()) if (node is AIController) loss.Show();
                 }
             }
         }

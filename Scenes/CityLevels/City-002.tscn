@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/CityAssets/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scenes/Tools/DrawLineTool.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/CityAssets/Building-002.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/CityLevels/City-003.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/AIController.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -324,3 +325,13 @@ resolution = 240.0
 [node name="PlayerController" parent="Car" instance=ExtResource( 3 )]
 
 [node name="Camera" parent="Car" instance=ExtResource( 4 )]
+
+[node name="Car2" parent="." instance=ExtResource( 2 )]
+
+[node name="AIController" parent="Car2" instance=ExtResource( 12 )]
+driftChance = 40
+driftCooldown = 4
+exitDriftChance = 40
+exitDriftCooldown = 4
+deaccelerateChance = 0
+maxDriftSpeed = 600

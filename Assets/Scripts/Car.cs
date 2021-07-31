@@ -91,8 +91,6 @@ public class Car : Node2D
             if (this.driftAngle < 0) this.driftAngle += this.driftSpeed;
         }
 
-        GD.Print(targetAngle);
-
         if ((lastPoint - nextPoint1).Length() != 0) movementDirection = (lastPoint - nextPoint1);
         else movementDirection = nextPoint1 - nextPoint2;
 
@@ -134,7 +132,7 @@ public class Car : Node2D
         if ((this.Position - nextPoint1).Length() < pointSnap && this.state != "Derailed")
         {
             lastPoint = new Vector2(nextPoint1);
-            if (lastPoint == start) lapsCompleted += 1;
+            if (lastPoint == start && nextPointIndex != 0) lapsCompleted += 1;
 
             nextPointIndex = (nextPointIndex + 1 == line.GetPointCount()) ? 0 : ++nextPointIndex;
             nextPoint1 = line.Position + line.Points[nextPointIndex] * line.Scale;
