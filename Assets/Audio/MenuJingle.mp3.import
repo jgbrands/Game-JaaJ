@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MenuJingle.mp3-9332f6801a623c4b1a1e37ae74b8705a.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/MenuJingle.mp3"
+dest_files=[ "res://.import/MenuJingle.mp3-9332f6801a623c4b1a1e37ae74b8705a.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

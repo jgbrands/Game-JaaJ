@@ -30,7 +30,6 @@ public class AIController : Node2D
         driftTime += delta;
         exitDriftTime += delta;
         deacceleratetTime += delta;
-        GD.Print(parent.lapsCompleted);
         if (this.active)
         {
             if (parent.state != "Derailed") parent.Accelerate();

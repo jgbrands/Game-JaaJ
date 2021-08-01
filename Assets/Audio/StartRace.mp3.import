@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/StartRace.mp3-8cc2389160aa2053d8eb7926d0c25e69.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/StartRace.mp3"
+dest_files=[ "res://.import/StartRace.mp3-8cc2389160aa2053d8eb7926d0c25e69.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

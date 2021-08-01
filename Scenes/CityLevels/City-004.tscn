@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Tools/CircuitBuilder.tscn" type="PackedScene" id=2]
@@ -8,17 +8,18 @@
 [ext_resource path="res://Scenes/DynamicCamera.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/CityLevels/City-005.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/AIController.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/CityAssets/CentralSquare.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0.478126, 168.727, -0.478126, -168.727, 568, 192, 725.538, 17.9426, -725.538, -17.9426, -64, -576, 33.6359, -393.54, -33.6359, 393.54, -936, 192, -556.673, 11.7725, 556.673, -11.7725, -200, 1040, 32.4579, 507.281, -32.4579, -507.281, 496, 264, 563.315, 4.1015, -563.315, -4.1015, -72, -384, -30.2723, -380.085, 30.2723, 380.085, -768, 192, -533.128, -45.4084, 533.128, 45.4084, -168, 800, -3.36359, 252.269, 3.36359, -252.269, 432, 264, 499.492, 10.0908, -499.492, -10.0908, -80, -256, 23.5451, -324.586, -23.5451, 324.586, -584, 200, -312.813, -40.363, 312.813, 40.363, -176, 632, -11.7725, 270.769, 11.7725, -270.769, 288, 232, 225.36, 3.36359, -225.36, -3.36359, -80, -96, 3.36359, -213.588, -3.36359, 213.588, -344, 168, -33.6359, -10.0908, 33.6359, 10.0908, -128, 384, 28.5905, 195.088, -28.5905, -195.088, 112, 160, 16.1503, -0.0845156, -16.1503, 0.0845156, -72, 0, 15.1361, -139.589, -15.1361, 139.589, -208, 136, -57.181, 60.5445, 57.181, -60.5445, -64, 232, 4.7778, 68.342, -4.7778, -68.342, -56, -640, 0, 0, 0, 0, -40, -960, -425.494, 13.4543, 425.494, -13.4543, 536, -1280, -13.4543, -250.587, 13.4543, 250.587, 1112, -904, 102.589, -269.087, -102.589, 269.087, 1032, -32, 185.924, -9.71319, -185.924, 9.71319, 736, 472, 0, 0, 0, 0, 568, 192 )
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="YSort"]
 
 [node name="Node2D" parent="." instance=ExtResource( 3 )]
 z_index = -2
-region_rect = Rect2( 0, 0, 2000, 2000 )
+region_rect = Rect2( 0, 0, 4000, 4000 )
 
 [node name="MatchController" parent="." instance=ExtResource( 5 )]
 nextLevel = ExtResource( 7 )
@@ -48,3 +49,7 @@ exitDriftChance = 20
 deaccelerateChance = 0
 maxNormalSpeed = 500
 maxDriftSpeed = 800
+
+[node name="Node2D2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 638, -816 )
+scale = Vector2( 6, 6 )

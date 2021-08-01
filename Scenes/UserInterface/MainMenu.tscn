@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Assets/Scripts/MainMenu.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Assets/Graphics/MainMenu/MainMenuStreet.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Graphics/MainMenu/MainMenuStrips.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Particles/Flames.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Audio/MenuJingle.mp3" type="AudioStream" id=8]
+[ext_resource path="res://Assets/Graphics/MainMenu/Title.png" type="Texture" id=9]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Default"
@@ -76,6 +78,35 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Vector2( 0, -10 ), Vector2( -5, 0 ), Vector2( 0, 0 ), Vector2( -10, -10 ), Vector2( -5, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Default"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 20, -30 ), Vector2( 30, -20 ), Vector2( 20, -30 ), Vector2( 30, -20 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0.0, 2.0, 0.0, -2.0 ]
 }
 
 [sub_resource type="Theme" id=5]
@@ -183,8 +214,33 @@ __meta__ = {
 autoplay = "Shake"
 anims/Shake = SubResource( 4 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer5" type="CanvasLayer" parent="BackGround"]
 layer = 5
+
+[node name="TextureRect" type="TextureRect" parent="BackGround/CanvasLayer5"]
+margin_left = 20.0
+margin_top = -30.0
+margin_right = 1038.0
+margin_bottom = 585.0
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BackGround/CanvasLayer5"]
+autoplay = "Default"
+anims/Default = SubResource( 8 )
+
+[node name="Control" type="Control" parent="BackGround/CanvasLayer5"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 6
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 anchor_left = 1.0
@@ -251,10 +307,10 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="CanvasLayer/Popup"]
-margin_left = 275.5
-margin_top = 382.0
-margin_right = 824.5
-margin_bottom = 461.0
+margin_left = 276.835
+margin_top = 297.905
+margin_right = 825.835
+margin_bottom = 376.905
 custom_fonts/font = SubResource( 7 )
 text = "Caso vc falhe o minigame vc vai descarrilhar, pra se recuperar aperte \"D\" repetidas vezes"
 autowrap = true
@@ -263,10 +319,10 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="CanvasLayer/Popup"]
-margin_left = 35.5
-margin_top = 262.0
-margin_right = 584.5
-margin_bottom = 341.0
+margin_left = 40.8394
+margin_top = 171.231
+margin_right = 589.839
+margin_bottom = 250.231
 custom_fonts/font = SubResource( 7 )
 text = "Quando estiver fazendo drift um pequeno minigame vai aparecer na tela, aperte \"S\" algumas vezes e tente descobrir como ele funciona"
 autowrap = true
@@ -275,16 +331,32 @@ __meta__ = {
 }
 
 [node name="Label4" type="Label" parent="CanvasLayer/Popup"]
-margin_left = 267.5
-margin_top = 142.0
-margin_right = 816.5
-margin_bottom = 221.0
+margin_left = 272.839
+margin_top = 80.5974
+margin_right = 821.839
+margin_bottom = 159.597
 custom_fonts/font = SubResource( 7 )
 text = "Aperte \"shift\" enquanto acelera pra fazer drift"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label5" type="Label" parent="CanvasLayer/Popup"]
+margin_left = 40.5772
+margin_top = 391.615
+margin_right = 589.577
+margin_bottom = 470.615
+custom_fonts/font = SubResource( 7 )
+text = "Caso ache que ja nao consegue mais ganhar a corrida aperte \"R\" para tentar ela de novo"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Options" to="." method="_on_Options_pressed"]

@@ -18,10 +18,11 @@ public class Car : Node2D
     private float driftSpeedMultiplier;
     private Vector2 movementDirection;
     private Node2D particleNode;
+    private AudioStreamPlayer2D engine;
 
     public string state = "Normal";
     public int acceleration;
-    public int speed;
+    public int speed = 0;
     private int maxSpeed;
     public int lapsCompleted = 0;
 
@@ -80,11 +81,10 @@ public class Car : Node2D
 
     private void CalculateRotation()
     {
+        nextPoint2 = line.Position + line.Points[(nextPointIndex + line.GetPointCount() / 15 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + line.GetPointCount() / 15 : nextPointIndex + line.GetPointCount() / 15] * line.Scale;
         targetAngle = ((this.nextPoint1 - this.lastPoint).Angle() - (this.nextPoint2 - this.nextPoint1).Angle());
-        if (targetAngle > Mathf.Pi) targetAngle -= Mathf.Pi;
-        if (targetAngle < -Mathf.Pi) targetAngle += Mathf.Pi;
 
-        if (this.state == "Drifting") this.driftAngle = -3.5f * this.targetAngle * (float)this.speed / (float)this.maxDriftSpeed;
+        if (this.state == "Drifting") this.driftAngle = -this.targetAngle * (float)this.speed / (float)this.maxDriftSpeed;
         if (this.state != "Drifting")
         {
             if (this.driftAngle > 0) this.driftAngle -= this.driftSpeed;
@@ -92,7 +92,7 @@ public class Car : Node2D
         }
 
         if ((lastPoint - nextPoint1).Length() != 0) movementDirection = (lastPoint - nextPoint1);
-        else movementDirection = nextPoint1 - nextPoint2;
+        //else movementDirection = nextPoint1 - nextPoint2;
 
         if (this.state != "Derailed")
         {
@@ -112,6 +112,7 @@ public class Car : Node2D
         line = this.GetParent().GetNode<Line2D>("CircuitBuilder/Circuit");
         stackedSprite = (Godot.Object)this.GetNode("StackedSprite");
         particleNode = (Node2D)this.GetNode("ParticleNode");
+        engine = (AudioStreamPlayer2D)this.GetNode("AudioStreamPlayer2D");
 
         nextPointIndex = startIndex + 1;
         line.Points[line.GetPointCount() - 1] = line.Points[0];
@@ -122,11 +123,14 @@ public class Car : Node2D
 
         this.Position = start;
         acceleration = defaultAcceleration;
+
+        engine.Playing = true;
     }
 
     public override void _Process(float delta)
     {
         playerMovement = new Vector2(0, 0);
+        engine.PitchScale = ((float)this.speed / (float)this.maxDriftSpeed) + 0.01f;
 
         //Circuit
         if ((this.Position - nextPoint1).Length() < pointSnap && this.state != "Derailed")
@@ -136,7 +140,7 @@ public class Car : Node2D
 
             nextPointIndex = (nextPointIndex + 1 == line.GetPointCount()) ? 0 : ++nextPointIndex;
             nextPoint1 = line.Position + line.Points[nextPointIndex] * line.Scale;
-            nextPoint2 = line.Position + line.Points[(nextPointIndex + 2 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + 2 : nextPointIndex + 2] * line.Scale;
+            //nextPoint2 = line.Position + line.Points[(nextPointIndex + 2 >= line.GetPointCount()) ? nextPointIndex - line.GetPointCount() + 2 : nextPointIndex + 2] * line.Scale;
 
         }
 

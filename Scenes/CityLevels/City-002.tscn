@@ -31,6 +31,7 @@ nextLevel = ExtResource( 11 )
 [node name="Node2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 51.0128, -174.287 )
 z_index = -2
+region_rect = Rect2( 0, 0, 4000, 4000 )
 
 [node name="Node2D2" parent="." instance=ExtResource( 8 )]
 position = Vector2( -390.135, -603.022 )
@@ -327,6 +328,7 @@ resolution = 240.0
 [node name="Camera" parent="Car" instance=ExtResource( 4 )]
 
 [node name="Car2" parent="." instance=ExtResource( 2 )]
+startIndex = 3
 
 [node name="AIController" parent="Car2" instance=ExtResource( 12 )]
 driftChance = 40

@@ -3,7 +3,7 @@
 [ext_resource path="res://Scenes/Car.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PlayerController.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Tools/CircuitBuilder.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/CityAssets/Building-003.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/CityAssets/Building-004.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/CityAssets/CityLamp.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Graphics/Rubble.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/CityAssets/Building-001.tscn" type="PackedScene" id=8]
@@ -37,16 +37,7 @@ _data = {
 
 [node name="YSort" type="YSort" parent="."]
 rotation = -0.0173453
-scale = Vector2( 1, 1 )
 z_index = 1
-
-[node name="Node2D" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( -350, -60 )
-scale = Vector2( 6, 6 )
-
-[node name="Node2D2" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 500, 8 )
-scale = Vector2( 6, 6 )
 
 [node name="Node2D3" parent="YSort" instance=ExtResource( 6 )]
 position = Vector2( -26.8057, -67.0779 )
@@ -145,13 +136,36 @@ curve = SubResource( 3 )
 object = ExtResource( 8 )
 numberOfObjects = 25.0
 
+[node name="Node2D" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -336.115, -134.831 )
+rotation = 0.0173453
+
+[node name="Node2D2" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -409.268, 5.34222 )
+rotation = 0.0173453
+
+[node name="Node2D7" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( -267.819, 4.96703 )
+rotation = 0.0173453
+
+[node name="Node2D8" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 477.711, -83.9389 )
+rotation = 0.0173453
+
+[node name="Node2D9" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 359.703, 32.8258 )
+rotation = 0.0173453
+
+[node name="Node2D10" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 539.616, 98.1816 )
+rotation = 0.0173453
+
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 124.001, 181.198 )
-scale = Vector2( 1.64415, 2.0637 )
+scale = Vector2( 2, 2 )
 z_index = -2
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 0, 0, 2000, 1000 )
+region_rect = Rect2( 0, 0, 4000, 4000 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 109.407, -7.13525 )

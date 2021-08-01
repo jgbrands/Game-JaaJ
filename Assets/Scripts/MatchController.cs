@@ -80,6 +80,8 @@ public class MatchController : Control
                     foreach (Node node in player.GetChildren()) if (node is AIController) loss.Show();
                 }
             }
+
+            if (Input.IsActionJustPressed("restart")) this.GetTree().ReloadCurrentScene();
         }
 
     }

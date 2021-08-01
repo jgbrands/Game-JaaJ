@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Scripts/MatchController.cs" type="Script" id=1]
 [ext_resource path="res://Assets/Fonts/PressStart2P-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Audio/StartRace.mp3" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 128
@@ -57,6 +58,7 @@ margin_top = -300.0
 margin_right = 512.0
 margin_bottom = 300.0
 custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
 text = "1"
 align = 1
 valign = 1
@@ -92,8 +94,8 @@ __meta__ = {
 margin_right = 268.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "TryAgain"
 
 [node name="Quit" type="Button" parent="CanvasLayer/Loss/HBoxContainer"]
@@ -101,15 +103,15 @@ margin_left = 272.0
 margin_right = 412.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
 text = "Quit"
 
 [node name="Label" type="Label" parent="CanvasLayer/Loss"]
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
 text = "
 
 You Lost :("
@@ -143,7 +145,7 @@ __meta__ = {
 margin_right = 332.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
 custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
 text = "Next Level"
 
@@ -152,7 +154,7 @@ margin_left = 336.0
 margin_right = 476.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
 custom_colors/font_color_hover = Color( 1, 0.882353, 0, 1 )
 text = "Quit"
 
@@ -160,7 +162,7 @@ text = "Quit"
 margin_right = 1024.0
 margin_bottom = 600.0
 custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
 text = "
 
 You Won!!!"
@@ -177,12 +179,16 @@ margin_top = 12.3303
 margin_right = 9.57263
 margin_bottom = 44.3303
 custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color = Color( 0.698039, 0.25098, 0.25098, 1 )
 text = "0/0"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
 
 [connection signal="animation_finished" from="CanvasLayer/Countdown/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="pressed" from="CanvasLayer/Loss/HBoxContainer/TryAgain" to="." method="_on_TryAgain_pressed"]
